@@ -31,11 +31,25 @@
 
 <script>
 export default {
+  data() {
+    return {
+      // 菜单列表
+      menuList: [],
+    };
+  },
+  // onload 事件
+  created() {
+    // 查询 menulist
+    this.getMenuList();
+  },
   methods: {
     // 安全退出
     logout() {
       window.sessionStorage.clear();
       this.$router.push("/login");
+    },
+    getMenuList() {
+      console.log("getMenulist");
     },
   },
 };
